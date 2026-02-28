@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll Animation Observer (Fade In Up)
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.15
+        rootMargin: '150px', // Trigger animation before it fully enters viewport
+        threshold: 0
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -41,6 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach(el => {
         observer.observe(el);
     });
+
+    // Fallback: auto-show everything after a short delay so user doesn't have to scroll
+    setTimeout(() => {
+        fadeElements.forEach(el => {
+            el.classList.add('visible');
+            observer.unobserve(el);
+        });
+    }, 500);
 
     // Add small delay for staggered load of hero elements if they exist
     const heroElements = document.querySelectorAll('.hero .fade-in-up');

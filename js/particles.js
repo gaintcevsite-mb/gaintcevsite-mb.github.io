@@ -5,7 +5,8 @@
 (function () {
     'use strict';
 
-    if (window.innerWidth < 1024) return;
+    const isMobile = window.innerWidth < 1024;
+    const baseSize = isMobile ? '40px' : '100px';
 
     // Detect if we're in a language subfolder (e.g., /ru/, /es/) and fix image base path
     const scriptEls = document.querySelectorAll('script[src*="particles.js"]');
@@ -30,7 +31,7 @@
     // Container
     const container = document.createElement('div');
     container.id = 'icon-decor';
-    container.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;overflow:hidden;';
+    container.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;overflow:hidden;';
     document.body.prepend(container);
 
     // Edge-only positions — avoid the center where text lives
@@ -77,10 +78,10 @@
             left: ${x}%;
             top: ${y}%;
             transform: translate(-50%, -50%) rotate(${rot}deg);
-            width: 100px;
-            height: 100px;
+            width: ${baseSize};
+            height: ${baseSize};
             object-fit: contain;
-            opacity: 0.28;
+            opacity: ${isMobile ? '0.15' : '0.28'};
             filter: drop-shadow(0 0 12px rgba(212, 184, 149, 0.6));
             animation: iconGlow 10s ease-in-out infinite ${delay}s, ${driftName} ${driftDuration}s ease-in-out infinite;
             user-select: none;

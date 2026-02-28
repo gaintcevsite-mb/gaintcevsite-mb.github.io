@@ -24,12 +24,12 @@
 </ul>
 <div class="nav-actions">
 <!-- Language Switcher -->
-<select class="form-control" id="lang-switcher" onchange="window.location.href=this.value" style="width:auto;padding:0.5rem;margin-right:1rem;display:inline-block;font-family:var(--font-mono);font-size:0.8rem;background:rgba(0,0,0,0.5);border:1px solid var(--border-subtle);color:var(--accent-gold);cursor:pointer;outline:none;">
-<option style="background:#1a1a2e;color:#d4af37;" value="../index.html">EN</option>
-<option style="background:#1a1a2e;color:#d4af37;" value="../ru/index.html">RU</option>
-<option style="background:#1a1a2e;color:#d4af37;" value="../es/index.html">ES</option>
-<option style="background:#1a1a2e;color:#d4af37;" value="../ur/index.html">UR</option>
-<option style="background:#1a1a2e;color:#d4af37;" selected="" value="../bn/index.html">BN</option>
+<select id="lang-switcher" onchange="window.location.href=this.value" style="width:auto;padding:0.5rem;margin-right:1rem;display:inline-block;font-family:var(--font-mono);font-size:0.8rem;background:rgba(0,0,0,0.5);border:1px solid var(--border-subtle);color:#D4B895 !important;cursor:pointer;outline:none;">
+<option style="background:#1a1a2e;color:#D4B895;" value="../index.html">EN</option>
+<option style="background:#1a1a2e;color:#D4B895;" value="../ru/index.html">RU</option>
+<option style="background:#1a1a2e;color:#D4B895;" value="../es/index.html">ES</option>
+<option style="background:#1a1a2e;color:#D4B895;" value="../ur/index.html">UR</option>
+<option selected="" style="background:#1a1a2e;color:#D4B895;" value="../bn/index.html">BN</option>
 </select>
 <a class="btn btn-primary btn-sm contact-cta" href="#" id="nav-cta-desktop" style="display:none; padding: 0.75rem 1.5rem; font-size: 0.75rem;">যোগাযোগ</a>
 </div>
@@ -184,9 +184,10 @@
             position: absolute;
             top: 0;
             left: 50px;
-            width: 1px;
+            width: 2px;
             height: 100%;
-            background: linear-gradient(to bottom, var(--accent-gold) 0%, transparent 100%);
+            background: linear-gradient(to bottom, var(--accent-gold) 0%, rgba(212, 184, 149, 0.2) 100%);
+            box-shadow: 0 0 15px var(--accent-gold), 0 0 5px var(--accent-gold);
             z-index: 0;
         }
 
@@ -324,7 +325,8 @@
 <div class="flow-step fade-in-up" style="transition-delay: 0.1s;">
 <div class="flow-number">02</div>
 <div class="flow-content">
-<h4 style="font-size: 1.5rem; margin-bottom: 1rem;">ডায়নামিক রাউটিং ও BIN</h4>
+<h4 style="font-size: 1.5rem; margin-bottom: 1rem;">ডায়নামিক রাউটিং ও BIN
+                            </h4>
 <p>Based on the BIN geography, historical success rates, and active MCC constraints, the
                                 transaction is actively routed to the optimal acquiring node within our redundant
                                 network.</p>
@@ -333,7 +335,8 @@
 <div class="flow-step fade-in-up" style="transition-delay: 0.2s;">
 <div class="flow-number">03</div>
 <div class="flow-content">
-<h4 style="font-size: 1.5rem; margin-bottom: 1rem;">অথরাইজেশন ও ক্যাসকেডিং ফেইলওভার</h4>
+<h4 style="font-size: 1.5rem; margin-bottom: 1rem;">অথরাইজেশন ও ক্যাসকেডিং ফেইলওভার
+                            </h4>
 <p>If a primary acquiring bank declines the authorization due to internal risk models or
                                 downtime, the sequence instantly cascades to pre-mapped secondary MIDs.</p>
 </div>
