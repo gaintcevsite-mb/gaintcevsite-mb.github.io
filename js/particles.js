@@ -1,163 +1,114 @@
 /**
- * Güler & Partners — Premium Animated Background
- * Smooth particle network + elegant font-rendered industry symbols
+ * Güler & Partners — Custom iGaming Icon Decor
+ * Places hand-designed icon PNGs as fixed background elements with CSS glow
  */
 (function () {
     'use strict';
 
     if (window.innerWidth < 1024) return;
 
-    const canvas = document.createElement('canvas');
-    canvas.id = 'particle-canvas';
-    canvas.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;';
-    document.body.prepend(canvas);
+    const icons = [
+        { src: 'img/icons/spade.png', hue: 0 },
+        { src: 'img/icons/heart.png', hue: 0 },
+        { src: 'img/icons/dice.png', hue: 0 },
+        { src: 'img/icons/slot.png', hue: 0 },
+        { src: 'img/icons/sevens.png', hue: 0 },
+        { src: 'img/icons/chip1.png', hue: 0 },
+        { src: 'img/icons/crown.png', hue: 0 },
+        { src: 'img/icons/lightning.png', hue: 0 },
+    ];
 
-    const ctx = canvas.getContext('2d');
-    let width, height, particles, glyphs, mouse;
+    const NUM = icons.length;
+    const cols = 4;
+    const rows = Math.ceil(NUM / cols);
 
-    const GOLD = { r: 212, g: 184, b: 149 };
-    const MAX_PARTICLES = 45;
-    const CONNECTION_DIST = 200;
-    const MOUSE_DIST = 250;
-    const NUM_GLYPHS = 14;
+    // Container
+    const container = document.createElement('div');
+    container.id = 'icon-decor';
+    container.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;overflow:hidden;';
+    document.body.prepend(container);
 
-    mouse = { x: -1000, y: -1000 };
+    // Edge-only positions — avoid the center where text lives
+    const edgePositions = [
+        // Left edge
+        { x: 3 + Math.random() * 9, y: 10 + Math.random() * 25 },
+        { x: 2 + Math.random() * 10, y: 55 + Math.random() * 25 },
+        // Right edge
+        { x: 88 + Math.random() * 9, y: 8 + Math.random() * 25 },
+        { x: 89 + Math.random() * 8, y: 50 + Math.random() * 30 },
+        // Top corners
+        { x: 15 + Math.random() * 15, y: 2 + Math.random() * 10 },
+        { x: 70 + Math.random() * 15, y: 2 + Math.random() * 10 },
+        // Bottom corners
+        { x: 5 + Math.random() * 15, y: 82 + Math.random() * 12 },
+        { x: 78 + Math.random() * 15, y: 82 + Math.random() * 12 },
+    ];
 
-    // ── Smooth Particle ──
-    class Particle {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 0.25;
-            this.vy = (Math.random() - 0.5) * 0.25;
-            this.radius = Math.random() * 1.8 + 0.5;
-            this.opacity = Math.random() * 0.35 + 0.15;
-        }
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            const dx = this.x - mouse.x;
-            const dy = this.y - mouse.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < MOUSE_DIST && dist > 0) {
-                const force = (MOUSE_DIST - dist) / MOUSE_DIST * 0.01;
-                this.vx += (dx / dist) * force;
-                this.vy += (dy / dist) * force;
+    icons.forEach((icon, i) => {
+        const pos = edgePositions[i % edgePositions.length];
+
+        const el = document.createElement('img');
+        el.src = icon.src;
+        el.alt = '';
+        el.draggable = false;
+
+        const x = pos.x;
+        const y = pos.y;
+
+        // Random slight rotation
+        const rot = (Math.random() - 0.5) * 20;
+
+        // Random animation delay for staggered glow breathing
+        const delay = (Math.random() * 8).toFixed(1);
+
+        // Unique slow drift parameters per icon
+        const driftX = Math.round((Math.random() - 0.5) * 60); // ±30px
+        const driftY = Math.round((Math.random() - 0.5) * 40); // ±20px
+        const driftDuration = (40 + Math.random() * 30).toFixed(0); // 40-70s
+        const driftName = `iconDrift_${i}`;
+
+        el.style.cssText = `
+            position: absolute;
+            left: ${x}%;
+            top: ${y}%;
+            transform: translate(-50%, -50%) rotate(${rot}deg);
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            opacity: 0.28;
+            filter: drop-shadow(0 0 12px rgba(212, 184, 149, 0.6));
+            animation: iconGlow 10s ease-in-out infinite ${delay}s, ${driftName} ${driftDuration}s ease-in-out infinite;
+            user-select: none;
+        `;
+
+        // Inject unique drift keyframes for this icon
+        const driftStyle = document.createElement('style');
+        driftStyle.textContent = `
+            @keyframes ${driftName} {
+                0%, 100% { transform: translate(-50%, -50%) rotate(${rot}deg) translate(0, 0); }
+                25% { transform: translate(-50%, -50%) rotate(${rot}deg) translate(${driftX}px, ${-driftY}px); }
+                50% { transform: translate(-50%, -50%) rotate(${rot + (Math.random() - 0.5) * 6}deg) translate(${-driftX * 0.7}px, ${driftY}px); }
+                75% { transform: translate(-50%, -50%) rotate(${rot}deg) translate(${driftX * 0.5}px, ${driftY * 0.5}px); }
             }
-            this.vx *= 0.999;
-            this.vy *= 0.999;
-            if (this.x < -50) this.x = width + 50;
-            if (this.x > width + 50) this.x = -50;
-            if (this.y < -50) this.y = height + 50;
-            if (this.y > height + 50) this.y = -50;
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${GOLD.r}, ${GOLD.g}, ${GOLD.b}, ${this.opacity})`;
-            ctx.fill();
-        }
-    }
+        `;
+        document.head.appendChild(driftStyle);
 
-    // ── Font-rendered Industry Glyphs ──
-    const SYMBOLS = ['♠', '♥', '♦', '♣', '♛', '⬡', '₿', '⚡', '$', '€', '♞', '⬢'];
+        container.appendChild(el);
+    });
 
-    class Glyph {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 0.12;
-            this.vy = (Math.random() - 0.5) * 0.12;
-            this.char = SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
-            this.size = Math.random() * 22 + 18; // 18-40px
-            this.rotation = Math.random() * Math.PI * 2;
-            this.rotSpeed = (Math.random() - 0.5) * 0.001; // very slow rotation
-            this.opacity = Math.random() * 0.06 + 0.04; // subtle: 4-10%
-            // Very slow, smooth breathing — no flicker
-            this.breathPhase = Math.random() * Math.PI * 2;
-            this.breathSpeed = Math.random() * 0.0003 + 0.0002; // extremely slow
-        }
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            this.rotation += this.rotSpeed;
-            if (this.x < -80) this.x = width + 80;
-            if (this.x > width + 80) this.x = -80;
-            if (this.y < -80) this.y = height + 80;
-            if (this.y > height + 80) this.y = -80;
-        }
-        draw() {
-            // Smooth sine breathing — no flicker, just a gentle swell
-            const breath = Math.sin(Date.now() * this.breathSpeed + this.breathPhase);
-            const alpha = this.opacity + breath * 0.025;
-            if (alpha <= 0.005) return;
-
-            ctx.save();
-            ctx.translate(this.x, this.y);
-            ctx.rotate(this.rotation);
-            ctx.globalAlpha = alpha;
-            ctx.font = `300 ${this.size}px 'Outfit', sans-serif`;
-            ctx.fillStyle = `rgb(${GOLD.r}, ${GOLD.g}, ${GOLD.b})`;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText(this.char, 0, 0);
-            ctx.globalAlpha = 1;
-            ctx.restore();
-        }
-    }
-
-    // ── Core ──
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    }
-
-    function init() {
-        resize();
-        particles = [];
-        glyphs = [];
-        for (let i = 0; i < MAX_PARTICLES; i++) particles.push(new Particle());
-        for (let i = 0; i < NUM_GLYPHS; i++) glyphs.push(new Glyph());
-    }
-
-    function drawConnections() {
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < CONNECTION_DIST) {
-                    const opacity = (1 - dist / CONNECTION_DIST) * 0.2;
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(${GOLD.r}, ${GOLD.g}, ${GOLD.b}, ${opacity})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.stroke();
-                }
+    // Inject glow keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes iconGlow {
+            0%, 100% {
+                opacity: 0.18;
+                filter: drop-shadow(0 0 8px rgba(212, 184, 149, 0.3));
+            }
+            50% {
+                opacity: 0.35;
+                filter: drop-shadow(0 0 22px rgba(212, 184, 149, 0.7));
             }
         }
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-
-        // Layer 1: Glyphs (behind everything)
-        glyphs.forEach(g => { g.update(); g.draw(); });
-
-        // Layer 2: Connection lines
-        drawConnections();
-
-        // Layer 3: Particles on top
-        particles.forEach(p => { p.update(); p.draw(); });
-
-        requestAnimationFrame(animate);
-    }
-
-    document.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
-    document.addEventListener('mouseleave', () => { mouse.x = -1000; mouse.y = -1000; });
-    window.addEventListener('resize', resize);
-
-    init();
-    animate();
+    `;
+    document.head.appendChild(style);
 })();
