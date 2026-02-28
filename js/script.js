@@ -149,10 +149,8 @@ if (partnerCtas.length > 0) {
 
     partnerCtas.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            if (window.innerWidth > 1024) {
-                e.preventDefault();
-                globalModal.classList.add('active');
-            }
+            e.preventDefault();
+            globalModal.classList.add('active');
         });
     });
 }

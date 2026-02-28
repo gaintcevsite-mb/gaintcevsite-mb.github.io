@@ -67,9 +67,9 @@
         const delay = (Math.random() * 8).toFixed(1);
 
         // Unique slow drift parameters per icon
-        const driftX = Math.round((Math.random() - 0.5) * 60); // ±30px
-        const driftY = Math.round((Math.random() - 0.5) * 40); // ±20px
-        const driftDuration = (40 + Math.random() * 30).toFixed(0); // 40-70s
+        const driftX = Math.round((Math.random() - 0.5) * 300); // ±150px
+        const driftY = Math.round((Math.random() - 0.5) * 200); // ±100px
+        const driftDuration = (20 + Math.random() * 20).toFixed(0); // 20-40s
         const driftName = `iconDrift_${i}`;
 
         el.style.cssText = `
