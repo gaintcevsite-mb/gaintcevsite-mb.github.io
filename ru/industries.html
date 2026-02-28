@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Секторы и вертикали | Güler &amp; Partners</title>
+<meta content="Acquiring solutions tailored for iGaming, Digital Assets, Adult Entertainment, and High-Volume E-Commerce." name="description"/>
+<link href="../css/styles.css" rel="stylesheet"/>
+<style>
+        .page-header {
+            padding: 16rem 0 8rem;
+            border-bottom: 1px solid var(--border-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 500px;
+            background: radial-gradient(ellipse at top, rgba(212, 184, 149, 0.08), transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .verticals-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 5rem;
+        }
+
+        .vertical-card {
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 3rem;
+            transition: transform 0.4s var(--ease-out);
+        }
+
+        .vertical-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .vertical-card p.mono {
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            background: rgba(212, 184, 149, 0.1);
+            border-radius: 100px;
+        }
+
+        .vertical-card h3 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .vertical-card p.desc {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .vertical-card ul {
+            list-style: none;
+            margin-top: 2rem;
+            border-left: 2px solid var(--border-subtle);
+            padding-left: 2rem;
+        }
+
+        .vertical-card ul li {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            position: relative;
+        }
+
+        .vertical-card ul li::before {
+            content: '→ ';
+            color: var(--accent-gold);
+            font-weight: bold;
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .verticals-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+<div class="container nav-container">
+<a class="nav-brand" href="../ru/index.html"><span class="dot"></span> GÜLER &amp; PARTNERS</a>
+<ul class="nav-links">
+<li><a href="../ru/index.html">Главная</a></li>
+<li><a href="../ru/about.html">О компании</a></li>
+<li><a href="../ru/partners.html">Целевые рынки</a></li>
+<li><a href="../ru/risk.html">Риск</a></li>
+<li><a class="active" href="../ru/industries.html">Вертикали</a></li>
+</ul>
+<div class="nav-actions" style="display: flex; align-items: center;">
+<!-- Language Switcher -->
+<select class="form-control" id="lang-switcher" onchange="window.location.href=this.value" style="width:auto;padding:0.5rem;margin-right:1rem;display:inline-block;font-family:var(--font-mono);font-size:0.8rem;background:#1a1a2e;border:1px solid rgba(212,175,55,0.3);color:#d4af37;cursor:pointer;outline:none;-webkit-appearance:none;appearance:none;border-radius:4px;">
+<option style="background:#1a1a2e;color:#d4af37;" value="../industries.html">EN</option>
+<option style="background:#1a1a2e;color:#d4af37;" selected="" value="../ru/industries.html">RU</option>
+<option style="background:#1a1a2e;color:#d4af37;" value="../es/industries.html">ES</option>
+<option style="background:#1a1a2e;color:#d4af37;" value="../ur/industries.html">UR</option>
+<option style="background:#1a1a2e;color:#d4af37;" value="../bn/industries.html">BN</option>
+</select>
+<a class="btn btn-primary btn-sm contact-cta" href="#" id="nav-cta-desktop" style="display:none; padding: 0.75rem 1.5rem; font-size: 0.75rem;">Связаться</a>
+</div>
+<button aria-label="Menu" class="mobile-menu-btn" id="mobile-menu-toggle">☰</button>
+</div>
+</nav>
+<main>
+<header class="page-header content-relative">
+<div class="grid-bg"></div>
+<div class="header-glow"></div>
+<div class="container fade-in-up">
+<p class="mono" style="color: var(--accent-gold); margin-bottom: 1.5rem;">Секторы</p>
+<h1>Сложные вертикали.</h1>
+<p style="font-size: 1.5rem; max-width: 800px; margin-top: 2rem; font-weight: 300; line-height: 1.4;">
+                    Каждый профиль риска требует уникальной стратегии эквайринга. Мы создаём выделенную инфраструктуру для отраслей, недообслуженных традиционным банкингом.
+                </p>
+</div>
+</header>
+<section class="section">
+<div class="container fade-in-up">
+<div class="verticals-grid">
+<div class="vertical-card glass-panel" style="border-top: 1px solid var(--border-subtle); padding: 3rem; background: var(--bg-tertiary);">
+<p class="mono">MCC 7995 / 7801</p>
+<h3>iGaming и ставки</h3>
+<p class="desc">Объём ставок крайне волатилен. Мы предоставляем операторам шлюзы с балансировкой нагрузки, способные обрабатывать экстремальные одновременные депозиты без срабатывания банковских протоколов.</p>
+<ul>
+<li>Автоматическая логика маршрутизации выплат</li>
+<li>Мультивалютные расчётные циклы (EUR, GBP, USD)</li>
+<li>Мгновенное географическое каскадное переключение</li>
+</ul>
+</div>
+<div class="vertical-card glass-panel" style="border-top: 1px solid var(--border-subtle); padding: 3rem; background: var(--bg-tertiary);">
+<p class="mono">MCC 6051</p>
+<h3>Цифровые активы и крипто-рампы</h3>
+<p class="desc">Конвертация фиата в цифровые активы несёт огромные риски чарджбэков и AML. Наши процессы 3D Secure обеспечивают жёсткий перенос ответственности. Мы обслуживаем лицензированные криптобиржи и комплаентные рампы.</p>
+<ul>
+<li>Кросс-проверка идентификации в реальном времени</li>
+<li>Агрессивные лимиты скорости для борьбы с тестированием карт</li>
+<li>Расчёты в стейблкоинах (USDT/USDC)</li>
+</ul>
+</div>
+<div class="vertical-card glass-panel" style="border-top: 1px solid var(--border-subtle); padding: 3rem; background: var(--bg-tertiary);">
+<p class="mono">MCC 5967</p>
+<h3>Контент для взрослых</h3>
+<p class="desc">Вертикаль, определяемая быстрыми изменениями политик карточных брендов. Мы поддерживаем прямые отношения с банками за пределами юрисдикции Северной Америки для непрерывных рекуррентных циклов биллинга.</p>
+<ul>
+<li>Управление непрерывностью подписок</li>
+<li>Защита от дружественного фрода через раннее предупреждение</li>
+<li>Строгое соблюдение требований Visa/Mastercard</li>
+</ul>
+</div>
+<div class="vertical-card glass-panel" style="border-top: 1px solid var(--border-subtle); padding: 3rem; background: var(--bg-tertiary);">
+<p class="mono">VARIOUS</p>
+<h3>Массовый e-commerce</h3>
+<p class="desc">Для масштабных ритейл и дропшиппинг операций, сталкивающихся с произвольными удержаниями от агрегаторов. Мы создаём прямые MID, дающие мерчантам суверенитет над средствами.</p>
+<ul>
+<li>Настраиваемые скользящие резервы на основе показателей</li>
+<li>Уведомления о чарджбэках через Ethoca/Verifi</li>
+<li>Интеллектуальное повторное списание для мягких отклонений</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Global Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="nav-brand" href="../ru/index.html" style="margin-bottom: 1.5rem;"><span class="dot"></span>
+                        GÜLER &amp; PARTNERS</a>
+<p style="max-width: 300px; color: var(--text-muted); font-size: 1rem;">Институциональное снижение рисков и отказоустойчивая архитектура эквайринга для глобальных мерчантов.</p>
+</div>
+<!-- ... Footer columns (same as index ) ... -->
+<div class="footer-col">
+<h4>Операции</h4>
+<ul>
+<li><a href="../ru/partners.html">Целевые рынки</a></li>
+<li><a href="../ru/risk.html">Стандарты андеррайтинга</a></li>
+<li><a href="../ru/contact.html">Подключение мерчантов</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Секторы</h4>
+<ul>
+<li><a href="../ru/industries.html">iGaming и ставки</a></li>
+<li><a href="../ru/industries.html">Цифровые активы</a></li>
+<li><a href="../ru/industries.html">Массовая розничная торговля</a></li>
+<li><a href="../ru/industries.html">Контент для взрослых</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Корпоративное</h4>
+<ul>
+<li><a href="../ru/about.html">О компании</a></li>
+<li><a href="mailto:compliance@gulerpartners.com">Отдел комплаенса</a></li>
+<li><a href="#">Политика конфиденциальности</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Güler &amp; Partners. Все права защищены.</p>
+<p class="mono" style="color: var(--accent-gold);">БЕЗОПАСНО / КОМПЛАЕНТНО / ИЗБЫТОЧНО</p>
+</div>
+</div>
+</footer>
+<style>
+        @media (min-width: 1025px) {
+            #nav-cta-desktop {
+                display: inline-flex !important;
+            }
+        }
+    </style>
+<script src="../js/particles.js"></script>
+<script src="../js/script.js"></script>
+
+
+</body>
+</html>

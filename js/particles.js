@@ -7,15 +7,20 @@
 
     if (window.innerWidth < 1024) return;
 
+    // Detect if we're in a language subfolder (e.g., /ru/, /es/) and fix image base path
+    const scriptEls = document.querySelectorAll('script[src*="particles.js"]');
+    const scriptSrc = scriptEls.length ? scriptEls[0].getAttribute('src') : '';
+    const basePath = scriptSrc.startsWith('../') ? '../' : '';
+
     const icons = [
-        { src: 'img/icons/spade.png', hue: 0 },
-        { src: 'img/icons/heart.png', hue: 0 },
-        { src: 'img/icons/dice.png', hue: 0 },
-        { src: 'img/icons/slot.png', hue: 0 },
-        { src: 'img/icons/sevens.png', hue: 0 },
-        { src: 'img/icons/chip1.png', hue: 0 },
-        { src: 'img/icons/crown.png', hue: 0 },
-        { src: 'img/icons/lightning.png', hue: 0 },
+        { src: basePath + 'img/icons/spade.png', hue: 0 },
+        { src: basePath + 'img/icons/heart.png', hue: 0 },
+        { src: basePath + 'img/icons/dice.png', hue: 0 },
+        { src: basePath + 'img/icons/slot.png', hue: 0 },
+        { src: basePath + 'img/icons/sevens.png', hue: 0 },
+        { src: basePath + 'img/icons/chip1.png', hue: 0 },
+        { src: basePath + 'img/icons/crown.png', hue: 0 },
+        { src: basePath + 'img/icons/lightning.png', hue: 0 },
     ];
 
     const NUM = icons.length;

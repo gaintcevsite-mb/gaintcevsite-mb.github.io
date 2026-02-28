@@ -1,5 +1,9 @@
 const translations = {
   "ru": {
+    "Independent Payment Operators Network": "Независимая сеть платёжных операторов",
+    "We connect structured capital with vetted local operators in high-risk markets. Engineered redundancy. Controlled exposure. Scalable routing.": "Мы связываем структурированный капитал с проверенными местными операторами на рынках высокого риска. Инженерная избыточность. Контролируемая экспозиция. Масштабируемая маршрутизация.",
+    "Get in touch": "Связаться",
+    "Target Markets": "Целевые рынки",
     "Cascading Algorithms": "Каскадные алгоритмы",
     "Merchant Onboarding": "Регистрация продавца",
     "Primary Acquiring & Settlement Focus": "Первичный эквайринг и расчеты",
@@ -179,6 +183,10 @@ const translations = {
     "\"Güler & Partners operates strictly within the anti-money laundering (AML) and counter-terrorist financing (CFT) frameworks established by our jurisdictional partners and acquiring networks. We do not provision infrastructure for restricted OFAC entities or unregulated operators in licensed jurisdictions. Our underwriting protocol mandates comprehensive disclosure of Ultimate Beneficial Ownership (UBO), historical processing statements, and continuous algorithmic monitoring of transaction origins to ensure absolute compliance without sacrificing throughput.\"": "«Güler & Partners действует строго в рамках системы борьбы с отмыванием денег (AML) и борьбы с финансированием терроризма (CFT), установленной нашими юрисдикционными партнерами и эквайринговыми сетями. Мы не предоставляем инфраструктуру для организаций OFAC с ограничениями или нерегулируемых операторов в лицензированных юрисдикциях. Наш протокол андеррайтинга требует всестороннего раскрытия конечного бенефициарного владения (UBO), отчетов об исторической обработке и непрерывного алгоритмического мониторинга происхождения транзакций, чтобы обеспечить абсолютное соответствие без ущерба для пропускной способности»."
   },
   "ur": {
+    "Independent Payment Operators Network": "آزاد ادائیگی آپریٹرز نیٹ ورک",
+    "We connect structured capital with vetted local operators in high-risk markets. Engineered redundancy. Controlled exposure. Scalable routing.": "ہم اعلی خطرے والی مارکیٹوں میں جانچ شدہ مقامی آپریٹرز کے ساتھ ساختی سرمائے کو جوڑتے ہیں۔ انجنیئرڈ فالتو پن۔ کنٹرولڈ ایکسپوژر۔ قابل توسیع روٹنگ۔",
+    "Get in touch": "رابطہ کریں",
+    "Target Markets": "ہدف مارکیٹیں",
     "Cascading Algorithms": "کاسکیڈنگ الگورتھم",
     "Merchant Onboarding": "مرچنٹ آن بورڈنگ",
     "Primary Acquiring & Settlement Focus": "بنیادی حصول اور تصفیہ فوکس",
@@ -358,6 +366,10 @@ const translations = {
     "\"Güler & Partners operates strictly within the anti-money laundering (AML) and counter-terrorist financing (CFT) frameworks established by our jurisdictional partners and acquiring networks. We do not provision infrastructure for restricted OFAC entities or unregulated operators in licensed jurisdictions. Our underwriting protocol mandates comprehensive disclosure of Ultimate Beneficial Ownership (UBO), historical processing statements, and continuous algorithmic monitoring of transaction origins to ensure absolute compliance without sacrificing throughput.\"": "\"Güler & Partners انسداد منی لانڈرنگ (AML) اور انسداد دہشت گردی کی مالی اعانت (CFT) فریم ورک کے اندر سختی سے کام کرتا ہے جو ہمارے دائرہ اختیار والے شراکت داروں اور ایکوائرنگ نیٹ ورکس کے ذریعے قائم کیا جاتا ہے۔ ہم محدود OFAC اداروں یا غیر منظم آپریٹرز کے لیے بنیادی ڈھانچے کی فراہمی نہیں کرتے ہیں جو ہمارے قانونی دائرہ کار کو ختم کرنے کے لیے لائسنس یافتہ ہیں۔ حتمی فائدہ مند ملکیت (UBO)، تاریخی پروسیسنگ بیانات، اور لین دین کی ابتداء کی مسلسل الگورتھمک نگرانی تاکہ تھروپپٹ کی قربانی کے بغیر مکمل تعمیل کو یقینی بنایا جا سکے۔\""
   },
   "bn": {
+    "Independent Payment Operators Network": "স্বাধীন পেমেন্ট অপারেটর নেটওয়ার্ক",
+    "We connect structured capital with vetted local operators in high-risk markets. Engineered redundancy. Controlled exposure. Scalable routing.": "আমরা উচ্চ-ঝুঁকিপূর্ণ বাজারে যাচাইকৃত স্থানীয় অপারেটরদের সাথে কাঠামোগত মূলধন সংযুক্ত করি। ইঞ্জিনিয়ারড রিডান্ড্যান্সি। নিয়ন্ত্রিত এক্সপোজার। স্কেলেবল রাউটিং।",
+    "Get in touch": "যোগাযোগ করুন",
+    "Target Markets": "লক্ষ্য বাজার",
     "Cascading Algorithms": "ক্যাসকেডিং অ্যালগরিদম",
     "Merchant Onboarding": "মার্চেন্ট অনবোর্ডিং",
     "Primary Acquiring & Settlement Focus": "প্রাথমিক অর্জন এবং নিষ্পত্তি ফোকাস",
@@ -537,6 +549,10 @@ const translations = {
     "\"Güler & Partners operates strictly within the anti-money laundering (AML) and counter-terrorist financing (CFT) frameworks established by our jurisdictional partners and acquiring networks. We do not provision infrastructure for restricted OFAC entities or unregulated operators in licensed jurisdictions. Our underwriting protocol mandates comprehensive disclosure of Ultimate Beneficial Ownership (UBO), historical processing statements, and continuous algorithmic monitoring of transaction origins to ensure absolute compliance without sacrificing throughput.\"": "\"Güler & Partners আমাদের এখতিয়ারগত অংশীদার এবং অধিগ্রহণকারী নেটওয়ার্কগুলির দ্বারা প্রতিষ্ঠিত অ্যান্টি-মানি লন্ডারিং (AML) এবং কাউন্টার-টেরোরিস্ট ফাইন্যান্সিং (CFT) কাঠামোর মধ্যে কঠোরভাবে কাজ করে৷ আমরা সীমাবদ্ধ OFAC সত্ত্বা বা অনিয়ন্ত্রিত অপারেটরদের জন্য অবকাঠামোর ব্যবস্থা করি না৷ আল্টিমেট বেনিফিশিয়াল ওনারশিপ (ইউবিও), ঐতিহাসিক প্রক্রিয়াকরণ বিবৃতি এবং লেনদেনের উত্সের ক্রমাগত অ্যালগরিদমিক নিরীক্ষণ থ্রুপুট ত্যাগ না করে পরম সম্মতি নিশ্চিত করতে।\""
   },
   "es": {
+    "Independent Payment Operators Network": "Red Independiente de Operadores de Pago",
+    "We connect structured capital with vetted local operators in high-risk markets. Engineered redundancy. Controlled exposure. Scalable routing.": "Conectamos capital estructurado con operadores locales verificados en mercados de alto riesgo. Redundancia diseñada. Exposición controlada. Enrutamiento escalable.",
+    "Get in touch": "Contáctenos",
+    "Target Markets": "Mercados Objetivo",
     "Cascading Algorithms": "Algoritmos en cascada",
     "Merchant Onboarding": "Incorporación de comerciantes",
     "Primary Acquiring & Settlement Focus": "Enfoque primario en adquisición y liquidación",
