@@ -186,6 +186,66 @@ a:hover {
   z-index: 1;
 }
 
+/* Floating Crypto Decor */
+.crypto-decor {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: var(--bg-glass);
+  border: 1px solid rgba(212, 184, 149, 0.15);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.crypto-decor svg {
+  width: 32px;
+  height: 32px;
+}
+
+.decor-1 {
+  top: 20%;
+  left: 10%;
+  animation: float 8s ease-in-out infinite;
+  transform: rotate(-10deg);
+}
+
+.decor-2 {
+  top: 60%;
+  right: 15%;
+  animation: float 12s ease-in-out infinite reverse;
+  transform: rotate(15deg);
+}
+
+.decor-3 {
+  top: 15%;
+  right: 25%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite 1s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
 /* Overlays / Glows */
 .glow-orb {
   position: absolute;
@@ -593,6 +653,10 @@ a:hover {
   .header-glow {
     opacity: 0.5 !important;
   }
+
+  .crypto-decor {
+    display: none !important;
+  }
 }
 
 /* Forms Premium Styling */
@@ -711,88 +775,105 @@ select.goog-te-combo {
 .modal-close:hover {
   color: var(--text-primary);
 }
+
 /* Custom Premium Select */
 .custom-select {
-    position: relative;
-    font-family: var(--font-sans);
-    width: 100%;
+  position: relative;
+  font-family: var(--font-sans);
+  width: 100%;
 }
+
 .custom-select .select-selected {
-    background-color: var(--bg-tertiary);
-    border: 1px solid var(--border-subtle);
-    color: var(--text-primary);
-    padding: 1.25rem;
-    font-size: 1.05rem;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    user-select: none;
-    transition: all 0.3s var(--ease-out);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  padding: 1.25rem;
+  font-size: 1.05rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s var(--ease-out);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .custom-select .select-selected::after {
-    content: '▼';
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    transition: transform 0.3s ease;
+  content: '▼';
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  transition: transform 0.3s ease;
 }
+
 .custom-select .select-selected.select-arrow-active::after {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
-.custom-select .select-selected:hover, .custom-select .select-selected.select-arrow-active {
-    border-color: var(--accent-gold);
-    background-color: var(--bg-secondary);
-    box-shadow: 0 0 0 1px var(--border-glow) inset;
+
+.custom-select .select-selected:hover,
+.custom-select .select-selected.select-arrow-active {
+  border-color: var(--accent-gold);
+  background-color: var(--bg-secondary);
+  box-shadow: 0 0 0 1px var(--border-glow) inset;
 }
+
 .custom-select .select-selected.has-selection {
-    border-color: var(--border-focus);
-    color: var(--accent-gold);
+  border-color: var(--border-focus);
+  color: var(--accent-gold);
 }
+
 .custom-select .select-items {
-    position: absolute;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-focus);
-    top: calc(100% + 5px);
-    left: 0;
-    right: 0;
-    z-index: 99;
-    border-radius: var(--radius-sm);
-    max-height: 250px;
-    overflow-y: auto;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+  position: absolute;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-focus);
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: var(--radius-sm);
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
 }
+
 .custom-select .select-hide {
-    display: none;
+  display: none;
 }
+
 .custom-select .select-items div {
-    color: var(--text-primary);
-    padding: 1rem 1.25rem;
-    cursor: pointer;
-    user-select: none;
-    border-bottom: 1px solid var(--border-subtle);
-    transition: background 0.2s ease, padding-left 0.2s ease, color 0.2s ease;
+  color: var(--text-primary);
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.2s ease, padding-left 0.2s ease, color 0.2s ease;
 }
+
 .custom-select .select-items div:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
+
 .custom-select .select-items div:hover {
-    background-color: rgba(212, 184, 149, 0.08); /* gold slight tint */
-    color: var(--accent-gold);
-    padding-left: 1.75rem;
+  background-color: rgba(212, 184, 149, 0.08);
+  /* gold slight tint */
+  color: var(--accent-gold);
+  padding-left: 1.75rem;
 }
+
 /* Custom Select Scrollbar */
 .custom-select .select-items::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
+
 .custom-select .select-items::-webkit-scrollbar-track {
-    background: var(--bg-secondary);
-    border-radius: 0 4px 4px 0;
+  background: var(--bg-secondary);
+  border-radius: 0 4px 4px 0;
 }
+
 .custom-select .select-items::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
+
 .custom-select .select-items::-webkit-scrollbar-thumb:hover {
-    background: rgba(212, 184, 149, 0.4);
+  background: rgba(212, 184, 149, 0.4);
 }
