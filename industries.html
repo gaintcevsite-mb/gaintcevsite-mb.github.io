@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sectors & Verticals | Güler & Partners</title>
+    <meta name="description"
+        content="Acquiring solutions tailored for iGaming, Digital Assets, Adult Entertainment, and High-Volume E-Commerce.">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 16rem 0 8rem;
+            border-bottom: 1px solid var(--border-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 500px;
+            background: radial-gradient(ellipse at top, rgba(212, 184, 149, 0.08), transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .verticals-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 5rem;
+        }
+
+        .vertical-card {
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 3rem;
+            transition: transform 0.4s var(--ease-out);
+        }
+
+        .vertical-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .vertical-card p.mono {
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            background: rgba(212, 184, 149, 0.1);
+            border-radius: 100px;
+        }
+
+        .vertical-card h3 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .vertical-card p.desc {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .vertical-card ul {
+            list-style: none;
+            margin-top: 2rem;
+            border-left: 2px solid var(--border-subtle);
+            padding-left: 2rem;
+        }
+
+        .vertical-card ul li {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            position: relative;
+        }
+
+        .vertical-card ul li::before {
+            content: '→ ';
+            color: var(--accent-gold);
+            font-weight: bold;
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .verticals-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand"><span class="dot"></span> GÜLER & PARTNERS</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">The Firm</a></li>
+                <li><a href="partners.html">Target Markets</a></li>
+                <li><a href="risk.html">Risk</a></li>
+                <li><a href="industries.html" class="active">Verticals</a></li>
+            </ul>
+            <div class="nav-actions" style="display: flex; align-items: center;">
+                <!-- Language Switcher -->
+                <select id="lang-switcher" class="form-control" style="width: auto; padding: 0.5rem; margin-right: 1rem; display: inline-block; font-family: var(--font-mono); font-size: 0.8rem; background: rgba(0,0,0,0.5); border: 1px solid var(--border-subtle); color: var(--accent-gold); cursor: pointer; outline: none;">
+                    <option value="en">EN</option>
+                    <option value="ru">RU</option>
+                    <option value="es">ES</option>
+                    <option value="ur">UR</option>
+                    <option value="bn">BN</option>
+                </select>
+
+                <a href="contact.html" class="btn btn-primary btn-sm" id="nav-cta-desktop"
+                    style="display:none; padding: 0.75rem 1.5rem; font-size: 0.75rem;">Request Assessment</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-toggle">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-header content-relative">
+            <div class="grid-bg"></div>
+            <div class="header-glow"></div>
+            <div class="container fade-in-up">
+                <p class="mono" style="color: var(--accent-gold); margin-bottom: 1.5rem;">Sectors</p>
+                <h1>Complex Verticals.</h1>
+                <p style="font-size: 1.5rem; max-width: 800px; margin-top: 2rem; font-weight: 300; line-height: 1.4;">
+                    Specific risk profiles require distinct acquiring strategies. We provision dedicated infrastructure
+                    for industries historically underserved by legacy banking.
+                </p>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container fade-in-up">
+                <div class="verticals-grid">
+                    <div class="vertical-card glass-panel"
+                        style="border-top: 1px solid var(--border-subtle); padding: 3rem; background: var(--bg-tertiary);">
+                        <p class="mono">MCC 7995 / 7801</p>
+                        <h3>iGaming & Sportsbook</h3>
+                        <p class="desc">Betting volume is heavily volatile, driven by sporting events and algorithmic
+                            risk models. We provide operators with load-balanced gateways capable of handling extreme
+                            concurrent deposit requests without triggering bank-side throttling protocols.</p>
+                        <ul>
+                            <li>Automated payout routing logic & fast settlements</li>
+                            <li>Multi-currency settlement loops (EUR, GBP, USD)</li>
+                            <li>Instant geographical fallback sequencing</li>
+                        </ul>
+                    </div>
+
+                    <div class="vertical-card glass-panel"
+                        style="border-top: 1px solid var(--border-subtle); padding: 3rem; background: var(--bg-tertiary);">
+                        <p class="mono">MCC 6051</p>
+                        <h3>Digital Assets & Crypto Ramps</h3>
+                        <p class="desc">Bridging fiat to digital assets carries immense chargeback and AML exposure. Our
+                            proprietary 3D Secure workflows enforce rigid liability shifts. We underwrite licensed
+                            crypto exchanges, OTC desks, and compliant fiat on/off-ramps.</p>
+                        <ul>
+                            <li>Real-time identity cross-referencing</li>
+                            <li>Aggressive velocity limits to combat card testing</li>
+                            <li>Stablecoin settlement options (USDT/USDC)</li>
+                        </ul>
+                    </div>
+
+                    <div class="vertical-card glass-panel"
+                        style="border-top: 1px solid var(--border-subtle); padding: 3rem; background: var(--bg-tertiary);">
+                        <p class="mono">MCC 5967</p>
+                        <h3>Adult Entertainment</h3>
+                        <p class="desc">A vertical defined by rapid card brand policy shifts and reputational risk. We
+                            maintain direct relationships with acquiring banks operating specifically outside of North
+                            American jurisdiction to guarantee uninterrupted recurring billing loops for content
+                            platforms.</p>
+                        <ul>
+                            <li>Subscription continuity management & rebilling logic</li>
+                            <li>Friendly-fraud mitigation workflows via early warnings</li>
+                            <li>Strict compliance with Visa/Mastercard mandates</li>
+                        </ul>
+                    </div>
+
+                    <div class="vertical-card glass-panel"
+                        style="border-top: 1px solid var(--border-subtle); padding: 3rem; background: var(--bg-tertiary);">
+                        <p class="mono">VARIOUS</p>
+                        <h3>High-Volume E-Commerce</h3>
+                        <p class="desc">For scale-focused retail and dropshipping operations facing arbitrary holdbacks
+                            from mainstream aggregators (e.g., Stripe, Shopify Payments). We establish direct MIDs that
+                            grant merchants absolute sovereignty over their funds and settlement schedules.</p>
+                        <ul>
+                            <li>Customizable rolling reserves based on performance</li>
+                            <li>Pre-dispute chargeback alerts via Ethoca/Verifi</li>
+                            <li>Intelligent rebilling for soft-declined authorizations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 1.5rem;"><span class="dot"></span>
+                        GÜLER & PARTNERS</a>
+                    <p style="max-width: 300px; color: var(--text-muted); font-size: 1rem;">Institutional risk
+                        mitigation and resilient acquiring architecture for global merchants.</p>
+                </div>
+                <!-- ... Footer columns (same as index ) ... -->
+                <div class="footer-col">
+                    <h4>Operations</h4>
+                    <ul>
+                        <li><a href="partners.html">Target Markets</a></li>
+                        <li><a href="risk.html">Underwriting Standards</a></li>
+                        <li><a href="contact.html">Merchant Onboarding</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sectors</h4>
+                    <ul>
+                        <li><a href="industries.html">iGaming & Sportsbook</a></li>
+                        <li><a href="industries.html">Digital Assets</a></li>
+                        <li><a href="industries.html">High-Volume Retail</a></li>
+                        <li><a href="industries.html">Adult Entertainment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Corporate</h4>
+                    <ul>
+                        <li><a href="about.html">The Firm</a></li>
+                        <li><a href="mailto:compliance@gulerpartners.com">Compliance Office</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Güler & Partners. All rights reserved.</p>
+                <p class="mono" style="color: var(--accent-gold);">SECURE / COMPLIANT / REDUNDANT</p>
+            </div>
+        </div>
+    </footer>
+    <style>
+        @media (min-width: 1025px) {
+            #nav-cta-desktop {
+                display: inline-flex !important;
+            }
+        }
+    </style>
+    <script src="js/script.js"></script>
+
+    <script src="js/translations.js"></script>
+    <script src="js/lang.js"></script>
+</body>
+
+
+</html>

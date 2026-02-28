@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Underwriting | Güler & Partners</title>
+    <meta name="description" content="Request a merchant processing assessment and consult with our underwriting team.">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 16rem 0 8rem;
+            border-bottom: 1px solid var(--border-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 500px;
+            background: radial-gradient(ellipse at top, rgba(212, 184, 149, 0.08), transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            margin-top: 5rem;
+        }
+
+        .contact-info {
+            position: sticky;
+            top: 120px;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .contact-info {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand"><span class="dot"></span> GÜLER & PARTNERS</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">The Firm</a></li>
+                <li><a href="partners.html">Target Markets</a></li>
+                <li><a href="risk.html">Risk</a></li>
+                <li><a href="industries.html">Verticals</a></li>
+            </ul>
+            <div class="nav-actions" style="display: flex; align-items: center;">
+                <!-- Language Switcher -->
+                <select id="lang-switcher" class="form-control" style="width: auto; padding: 0.5rem; margin-right: 1rem; display: inline-block; font-family: var(--font-mono); font-size: 0.8rem; background: rgba(0,0,0,0.5); border: 1px solid var(--border-subtle); color: var(--accent-gold); cursor: pointer; outline: none;">
+                    <option value="en">EN</option>
+                    <option value="ru">RU</option>
+                    <option value="es">ES</option>
+                    <option value="ur">UR</option>
+                    <option value="bn">BN</option>
+                </select>
+
+                <a href="contact.html" class="btn btn-primary btn-sm" id="nav-cta-desktop"
+                    style="display:none; padding: 0.75rem 1.5rem; font-size: 0.75rem;">Request Assessment</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-toggle">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-header content-relative">
+            <div class="grid-bg"></div>
+            <div class="header-glow"></div>
+            <div class="container fade-in-up">
+                <p class="mono" style="color: var(--accent-gold); margin-bottom: 1.5rem;">Underwriting</p>
+                <h1>Contact Underwriting.</h1>
+                <p style="font-size: 1.5rem; max-width: 800px; margin-top: 2rem; font-weight: 300; line-height: 1.4;">
+                    Access to the Güler & Partners infrastructure requires strict preliminary vetting. Submit a detailed
+                    request below to initiate a consultation with our risk assessment team.
+                </p>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container fade-in-up flex-container contact-grid">
+                <div>
+                    <div class="contact-info">
+                        <h3 style="font-size: 2.25rem; margin-bottom: 1.5rem;">Operational Parameters</h3>
+                        <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2rem;">We do not
+                            aggregate volume for unverified entities. All prospective merchants must be prepared to
+                            submit documented processing histories, defined Ultimate Beneficial Ownership (UBO), and
+                            detailed risk logic models during the formal underwriting phase.</p>
+
+                        <div class="glass-panel"
+                            style="padding: 2.5rem; margin-top: 3rem; background: var(--bg-tertiary); border-left: 3px solid var(--accent-gold);">
+                            <h4
+                                style="font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 1rem;">
+                                Corporate HQ</h4>
+                            <p
+                                style="color: var(--text-primary); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.5;">
+                                One Canada Square<br>Canary Wharf, London<br>E14 5AB, United Kingdom</p>
+
+                            <h4
+                                style="font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 1rem;">
+                                Direct Inquiries</h4>
+                            <p style="margin-bottom: 0.5rem;"><a href="mailto:underwriting@gulerpartners.com"
+                                    style="color: var(--text-primary); font-size: 1.1rem;">underwriting@gulerpartners.com</a>
+                            </p>
+                            <p><a href="mailto:compliance@gulerpartners.com"
+                                    style="color: var(--text-primary); font-size: 1.1rem;">compliance@gulerpartners.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel"
+                    style="padding: 3rem; border: 1px solid var(--border-subtle); background: var(--bg-secondary);">
+                    <form action="#" method="POST"
+                        onsubmit="event.preventDefault(); alert('Initial Assessment Request Submitted. Our compliance team will review your application.');">
+                        <div class="form-group">
+                            <label class="form-label" for="entityName">Corporate Entity Name</label>
+                            <input type="text" id="entityName" class="form-control"
+                                placeholder="e.g. Apex Holdings Ltd." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="jurisdiction">Country of Incorporation</label>
+                            <input type="text" id="jurisdiction" class="form-control"
+                                placeholder="e.g. Cyprus, Malta, UK" required>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div class="form-group">
+                                <label class="form-label" for="volume">Est. Monthly Volume</label>
+                                <select id="volume" class="form-control" required
+                                    style="appearance: none; background: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23D4B895\'%3E%3Cpath d=\'M7 10l5 5 5-5z\'/%3E%3C/svg%3E') no-repeat right 1rem center; background-color: rgba(0,0,0,0.3); background-size: 1.5em;">
+                                    <option value="">Select Range...</option>
+                                    <option value="50k-250k">&lt; $250,000</option>
+                                    <option value="250k-1m">$250,000 - $1M</option>
+                                    <option value="1m-5m">$1M - $5M</option>
+                                    <option value="5m+">$5M+</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="chargeback">Chargeback Ratio</label>
+                                <input type="text" id="chargeback" class="form-control" placeholder="e.g. 1.2%"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="vertical">Primary Vertical / Industry</label>
+                            <input type="text" id="vertical" class="form-control"
+                                placeholder="e.g. iGaming, Digital Asset Exchange" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="website">Primary URL(s)</label>
+                            <input type="url" id="website" class="form-control" placeholder="https://" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Operational Overview</label>
+                            <textarea id="message" class="form-control"
+                                placeholder="Provide details regarding your current processing setup, constraints, and why you are seeking redundant infrastructure."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary"
+                            style="width: 100%; margin-top: 1rem; padding: 1.25rem;">Submit File For Review</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 1.5rem;"><span class="dot"></span>
+                        GÜLER & PARTNERS</a>
+                    <p style="max-width: 300px; color: var(--text-muted); font-size: 1rem;">Institutional risk
+                        mitigation and resilient acquiring architecture for global merchants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Operations</h4>
+                    <ul>
+                        <li><a href="partners.html">Target Markets</a></li>
+                        <li><a href="risk.html">Underwriting Standards</a></li>
+                        <li><a href="contact.html">Merchant Onboarding</a></li>
+                    </ul>
+                </div>
+                <!-- ... Footer columns (same as index ) ... -->
+                <div class="footer-col">
+                    <h4>Sectors</h4>
+                    <ul>
+                        <li><a href="industries.html">iGaming & Sportsbook</a></li>
+                        <li><a href="industries.html">Digital Assets</a></li>
+                        <li><a href="industries.html">High-Volume Retail</a></li>
+                        <li><a href="industries.html">Adult Entertainment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Corporate</h4>
+                    <ul>
+                        <li><a href="about.html">The Firm</a></li>
+                        <li><a href="mailto:compliance@gulerpartners.com">Compliance Office</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Güler & Partners. All rights reserved.</p>
+                <p class="mono" style="color: var(--accent-gold);">SECURE / COMPLIANT / REDUNDANT</p>
+            </div>
+        </div>
+    </footer>
+    <style>
+        @media (min-width: 1025px) {
+            #nav-cta-desktop {
+                display: inline-flex !important;
+            }
+        }
+    </style>
+    <script src="js/script.js"></script>
+
+    <script src="js/translations.js"></script>
+    <script src="js/lang.js"></script>
+</body>
+
+
+</html>

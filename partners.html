@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Markets | Güler & Partners</title>
+    <meta name="description" content="Target regions for local acquiring and processing partnerships.">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header { 
+            padding: 16rem 0 8rem; 
+            border-bottom: 1px solid var(--border-subtle); 
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-glow {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 100vw; height: 500px;
+            background: radial-gradient(ellipse at top, rgba(212, 184, 149, 0.08), transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 5rem;
+        }
+
+        .country-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .country-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            background: var(--bg-secondary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 0 1px var(--border-glow);
+        }
+
+        .country-flag {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .country-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(5, 10, 15, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s var(--ease-out);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-focus);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: translateY(30px);
+            transition: transform 0.4s var(--ease-out);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(212, 184, 149, 0.1);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand"><span class="dot"></span> GÜLER & PARTNERS</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">The Firm</a></li>
+                <li><a href="partners.html" class="active">Target Markets</a></li>
+                <li><a href="risk.html">Risk</a></li>
+                <li><a href="industries.html">Verticals</a></li>
+            </ul>
+            <div class="nav-actions" style="display: flex; align-items: center;">
+                <select id="lang-switcher" class="form-control" style="width: auto; padding: 0.5rem; margin-right: 1rem; display: inline-block; font-family: var(--font-mono); font-size: 0.8rem; background: rgba(0,0,0,0.5); border: 1px solid var(--border-subtle); color: var(--accent-gold); cursor: pointer; outline: none;">
+                    <option value="en">EN</option>
+                    <option value="ru">RU</option>
+                    <option value="es">ES</option>
+                    <option value="ur">UR</option>
+                    <option value="bn">BN</option>
+                </select>
+                <a href="partners.html" class="btn btn-primary btn-sm partner-cta" id="nav-cta-desktop" style="display:none; padding: 0.75rem 1.5rem; font-size: 0.75rem;">Become a Partner</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-toggle">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-header content-relative">
+            <div class="grid-bg"></div>
+            <div class="header-glow"></div>
+            <div class="container fade-in-up">
+                <p class="mono" style="color: var(--accent-gold); margin-bottom: 1.5rem;">Target Markets</p>
+                <h1>Global Partnership <br/><span style="color: var(--text-secondary);">Opportunities.</span></h1>
+                <p style="font-size: 1.5rem; max-width: 800px; margin-top: 2rem; font-weight: 300; line-height: 1.4; color: var(--text-primary);">
+                    We are actively seeking regional acquiring and processing partners in key emerging jurisdictions to expand our resilient infrastructure.
+                </p>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container fade-in-up">
+                <div style="max-width: 800px; margin-bottom: 3rem;">
+                    <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Regions in focus</h3>
+                    <p style="font-size: 1.25rem;">Select your country from the list below to learn about exclusive conditions for strategic processing partners and direct integration opportunities with our gateway API.</p>
+                </div>
+
+                <div class="countries-grid">
+                    <div class="country-card" onclick="openModal('Pakistan', '🇵🇰')">
+                        <span class="country-flag">🇵🇰</span>
+                        <span class="country-name">Pakistan</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Bangladesh', '🇧🇩')">
+                        <span class="country-flag">🇧🇩</span>
+                        <span class="country-name">Bangladesh</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Tunisia', '🇹🇳')">
+                        <span class="country-flag">🇹🇳</span>
+                        <span class="country-name">Tunisia</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Ethiopia', '🇪🇹')">
+                        <span class="country-flag">🇪🇹</span>
+                        <span class="country-name">Ethiopia</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Egypt', '🇪🇬')">
+                        <span class="country-flag">🇪🇬</span>
+                        <span class="country-name">Egypt</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Bhutan', '🇧🇹')">
+                        <span class="country-flag">🇧🇹</span>
+                        <span class="country-name">Bhutan</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Costa-Rica', '🇨🇷')">
+                        <span class="country-flag">🇨🇷</span>
+                        <span class="country-name">Costa-Rica</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Argentina', '🇦🇷')">
+                        <span class="country-flag">🇦🇷</span>
+                        <span class="country-name">Argentina</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Ecuador', '🇪🇨')">
+                        <span class="country-flag">🇪🇨</span>
+                        <span class="country-name">Ecuador</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Dominican Republic', '🇩🇴')">
+                        <span class="country-flag">🇩🇴</span>
+                        <span class="country-name">Dominican Republic</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Honduras', '🇭🇳')">
+                        <span class="country-flag">🇭🇳</span>
+                        <span class="country-name">Honduras</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('El Salvador', '🇸🇻')">
+                        <span class="country-flag">🇸🇻</span>
+                        <span class="country-name">El Salvador</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Panama', '🇵🇦')">
+                        <span class="country-flag">🇵🇦</span>
+                        <span class="country-name">Panama</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Paraguay', '🇵🇾')">
+                        <span class="country-flag">🇵🇾</span>
+                        <span class="country-name">Paraguay</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Uruguay', '🇺🇾')">
+                        <span class="country-flag">🇺🇾</span>
+                        <span class="country-name">Uruguay</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Jamaica', '🇯🇲')">
+                        <span class="country-flag">🇯🇲</span>
+                        <span class="country-name">Jamaica</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Nepal', '🇳🇵')">
+                        <span class="country-flag">🇳🇵</span>
+                        <span class="country-name">Nepal</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Guatemala', '🇬🇹')">
+                        <span class="country-flag">🇬🇹</span>
+                        <span class="country-name">Guatemala</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Cambodia', '🇰🇭')">
+                        <span class="country-flag">🇰🇭</span>
+                        <span class="country-name">Cambodia</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('India', '🇮🇳')">
+                        <span class="country-flag">🇮🇳</span>
+                        <span class="country-name">India</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Algeria', '🇩🇿')">
+                        <span class="country-flag">🇩🇿</span>
+                        <span class="country-name">Algeria</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Senegal', '🇸🇳')">
+                        <span class="country-flag">🇸🇳</span>
+                        <span class="country-name">Senegal</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Mali', '🇲🇱')">
+                        <span class="country-flag">🇲🇱</span>
+                        <span class="country-name">Mali</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Guinea', '🇬🇳')">
+                        <span class="country-flag">🇬🇳</span>
+                        <span class="country-name">Guinea</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Brunei', '🇧🇳')">
+                        <span class="country-flag">🇧🇳</span>
+                        <span class="country-name">Brunei</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Papua New Guinea', '🇵🇬')">
+                        <span class="country-flag">🇵🇬</span>
+                        <span class="country-name">Papua New Guinea</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Kenya', '🇰🇪')">
+                        <span class="country-flag">🇰🇪</span>
+                        <span class="country-name">Kenya</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Sri Lanka', '🇱🇰')">
+                        <span class="country-flag">🇱🇰</span>
+                        <span class="country-name">Sri Lanka</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Bahrain', '🇧🇭')">
+                        <span class="country-flag">🇧🇭</span>
+                        <span class="country-name">Bahrain</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Nicaragua', '🇳🇮')">
+                        <span class="country-flag">🇳🇮</span>
+                        <span class="country-name">Nicaragua</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Laos', '🇱🇦')">
+                        <span class="country-flag">🇱🇦</span>
+                        <span class="country-name">Laos</span>
+                    </div>
+                    <div class="country-card" onclick="openModal('Myanmar', '🇲🇲')">
+                        <span class="country-flag">🇲🇲</span>
+                        <span class="country-name">Myanmar</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Form -->
+    <div class="modal-overlay" id="partnerModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <p class="mono" style="color: var(--accent-gold); margin-bottom: 1rem;">Partnership Application</p>
+            <h3 style="font-size: 2rem; margin-bottom: 1.5rem;"><span id="modalFlag"></span> <span id="modalCountry"></span></h3>
+            <p style="color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1.1rem;">
+                We are looking for reliable processing partners in this region. 
+                By joining the Güler & Partners network, you gain access to exclusive conditions, cross-border routing volume, and dedicated technical integration support.
+            </p>
+            <a href="https://t.me/GulerPartners_bot" target="_blank" class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1rem;">Apply via Telegram</a>
+        </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 1.5rem;"><span class="dot"></span> GÜLER & PARTNERS</a>
+                    <p style="max-width: 300px; color: var(--text-muted); font-size: 1rem;">Institutional risk mitigation and resilient acquiring architecture for global merchants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Operations</h4>
+                    <ul>
+                        <li><a href="partners.html">Target Markets</a></li>
+                        <li><a href="risk.html">Underwriting Standards</a></li>
+                        <li><a href="contact.html">Merchant Onboarding</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sectors</h4>
+                    <ul>
+                        <li><a href="industries.html">iGaming & Sportsbook</a></li>
+                        <li><a href="industries.html">Digital Assets</a></li>
+                        <li><a href="industries.html">High-Volume Retail</a></li>
+                        <li><a href="industries.html">Adult Entertainment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Corporate</h4>
+                    <ul>
+                        <li><a href="about.html">The Firm</a></li>
+                        <li><a href="mailto:compliance@gulerpartners.com">Compliance Office</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Güler & Partners. All rights reserved.</p>
+                <p class="mono" style="color: var(--accent-gold);">SECURE / COMPLIANT / REDUNDANT</p>
+            </div>
+        </div>
+    </footer>
+    <style>@media (min-width: 1025px) { #nav-cta-desktop { display: inline-flex !important; } }</style>
+    <script src="js/script.js"></script>
+    <script>
+        function openModal(country, flag) {
+            document.getElementById('modalCountry').innerText = country;
+            document.getElementById('modalFlag').innerText = flag;
+            document.getElementById('partnerModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('partnerModal').classList.remove('active');
+        }
+
+        // Close when clicking outside
+        document.getElementById('partnerModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+    <script src="js/translations.js"></script>
+    <script src="js/lang.js"></script>
+</body>
+</html>

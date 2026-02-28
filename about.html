@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Firm | Güler & Partners</title>
+    <meta name="description"
+        content="Corporate history, banking philosophy, and geographical footprint of Güler & Partners.">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 16rem 0 8rem;
+            border-bottom: 1px solid var(--border-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 500px;
+            background: radial-gradient(ellipse at top, rgba(212, 184, 149, 0.08), transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .firm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+
+        @media (max-width: 768px) {
+            .firm-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand"><span class="dot"></span> GÜLER & PARTNERS</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">The Firm</a></li>
+                <li><a href="partners.html">Target Markets</a></li>
+                <li><a href="risk.html">Risk</a></li>
+                <li><a href="industries.html">Verticals</a></li>
+            </ul>
+            <div class="nav-actions" style="display: flex; align-items: center;">
+                <!-- Language Switcher -->
+                <select id="lang-switcher" class="form-control" style="width: auto; padding: 0.5rem; margin-right: 1rem; display: inline-block; font-family: var(--font-mono); font-size: 0.8rem; background: rgba(0,0,0,0.5); border: 1px solid var(--border-subtle); color: var(--accent-gold); cursor: pointer; outline: none;">
+                    <option value="en">EN</option>
+                    <option value="ru">RU</option>
+                    <option value="es">ES</option>
+                    <option value="ur">UR</option>
+                    <option value="bn">BN</option>
+                </select>
+
+                <a href="contact.html" class="btn btn-primary btn-sm" id="nav-cta-desktop"
+                    style="display:none; padding: 0.75rem 1.5rem; font-size: 0.75rem;">Request Assessment</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-toggle">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-header content-relative">
+            <div class="grid-bg"></div>
+            <div class="header-glow"></div>
+            <div class="container fade-in-up">
+                <p class="mono" style="color: var(--accent-gold); margin-bottom: 1.5rem;">Corporate Overview</p>
+                <h1>The Firm.</h1>
+                <p
+                    style="font-size: 1.5rem; max-width: 800px; margin-top: 2rem; font-weight: 300; line-height: 1.4; color: var(--text-primary);">
+                    Güler & Partners acts as a systemic firewall between high-risk operators and the volatility of global
+                    acquiring networks.
+                </p>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container fade-in-up">
+                <div class="firm-grid">
+                    <div class="glass-panel">
+                        <p class="mono" style="color: var(--accent-gold); margin-bottom: 1.5rem;">// 01_HISTORY</p>
+                        <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Corporate History & Collective Experience
+                        </h3>
+                        <p>Güler & Partners was established by veterans of the high-risk payment sector who recognized a
+                            persistent failure in the acquiring market: instability. For over a decade, our founding
+                            partners have managed processing infrastructure for complex verticals, navigating regulatory
+                            shifts, mass offboarding events, and shifting card brand mandates.</p>
+                        <p>We built this firm not to offer "innovative" payment solutions, but to engineer pure
+                            resilience. Our collective experience dictates that redundant banking relationships and
+                            predictive risk mitigation are the only defenses against operational downtime.</p>
+                    </div>
+                    <div class="glass-panel">
+                        <p class="mono" style="color: var(--accent-gold); margin-bottom: 1.5rem;">// 02_PHILOSOPHY</p>
+                        <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Banking Philosophy: Redundancy Above All
+                        </h3>
+                        <p>Our operational philosophy is strictly conservative: we assume failure is mathematically
+                            inevitable at the single-node level. Therefore, we never rely on a singular sponsor bank or
+                            acquiring gateway.</p>
+                        <p>By intentionally distributing processing volume across multiple jurisdictions and maintaining
+                            dormant failover nodes, we ensure that an isolated regulatory action or banking policy shift
+                            cannot trigger systemic failure for our merchants. Autonomy is achieved through absolute
+                            redundancy.</p>
+                    </div>
+
+                    <div class="glass-panel"
+                        style="grid-column: 1 / -1; margin-top: 2rem; background: var(--bg-tertiary);">
+                        <p class="mono" style="color: var(--accent-gold); margin-bottom: 1.5rem;">// 03_FOOTPRINT</p>
+                        <h3 style="font-size: 2.5rem; margin-bottom: 2rem;">Geographical Footprint & Jurisdictional
+                            Expertise</h3>
+                        <p style="max-width: 800px; font-size: 1.25rem;">Operating a high-risk portfolio demands precise
+                            corporate structuring. Our direct acquiring relationships span Tier-1 and Tier-2
+                            jurisdictions across Europe (EEA), the UK, Latin America, and designated offshore financial
+                            centers. We actively map merchant MIDs geographically to optimize authorization rates and
+                            align with the specific risk tolerance of regional banking partners.</p>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 3rem;">
+                            <div>
+                                <h4
+                                    style="font-family: var(--font-mono); font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent-gold); letter-spacing: 0.05em;">
+                                    Europe (EEA)</h4>
+                                <p style="font-size: 1rem; margin: 0; color: var(--text-primary);">Primary Acquiring &
+                                    Settlement Focus</p>
+                            </div>
+                            <div>
+                                <h4
+                                    style="font-family: var(--font-mono); font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent-gold); letter-spacing: 0.05em;">
+                                    Latin America</h4>
+                                <p style="font-size: 1rem; margin: 0; color: var(--text-primary);">Alternative Payment
+                                    Rails (APM) & Local Processing</p>
+                            </div>
+                            <div>
+                                <h4
+                                    style="font-family: var(--font-mono); font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent-gold); letter-spacing: 0.05em;">
+                                    Offshore Centers</h4>
+                                <p style="font-size: 1rem; margin: 0; color: var(--text-primary);">Unlicensed Adult &
+                                    Specific iGaming Nodes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 1.5rem;"><span class="dot"></span>
+                        GÜLER & PARTNERS</a>
+                    <p style="max-width: 300px; color: var(--text-muted); font-size: 1rem;">Institutional risk
+                        mitigation and resilient acquiring architecture for global merchants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Operations</h4>
+                    <ul>
+                        <li><a href="partners.html">Target Markets</a></li>
+                        <li><a href="risk.html">Underwriting Standards</a></li>
+                        <li><a href="contact.html">Merchant Onboarding</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sectors</h4>
+                    <ul>
+                        <li><a href="industries.html">iGaming & Sportsbook</a></li>
+                        <li><a href="industries.html">Digital Assets</a></li>
+                        <li><a href="industries.html">High-Volume Retail</a></li>
+                        <li><a href="industries.html">Adult Entertainment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Corporate</h4>
+                    <ul>
+                        <li><a href="about.html">The Firm</a></li>
+                        <li><a href="mailto:compliance@gulerpartners.com">Compliance Office</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Güler & Partners. All rights reserved.</p>
+                <p class="mono" style="color: var(--accent-gold);">SECURE / COMPLIANT / REDUNDANT</p>
+            </div>
+        </div>
+    </footer>
+    <style>
+        @media (min-width: 1025px) {
+            #nav-cta-desktop {
+                display: inline-flex !important;
+            }
+        }
+    </style>
+    <script src="js/script.js"></script>
+
+    <script src="js/translations.js"></script>
+    <script src="js/lang.js"></script>
+</body>
+
+
+</html>

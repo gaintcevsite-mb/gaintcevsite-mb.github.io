@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk & Compliance | Güler & Partners</title>
+    <meta name="description"
+        content="Underwriting standards, fraud scoring, and AML compliance frameworks for high-risk acquirers.">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            padding: 16rem 0 8rem;
+            border-bottom: 1px solid var(--border-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 500px;
+            background: radial-gradient(ellipse at top, rgba(212, 184, 149, 0.08), transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 8rem;
+            margin-top: 5rem;
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 120px;
+        }
+
+        .nav-list {
+            list-style: none;
+            border-left: 1px solid var(--border-subtle);
+            margin-left: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .nav-list::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -1px;
+            width: 2px;
+            height: 100%;
+            background: var(--accent-gold);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.4s var(--ease-out);
+        }
+
+        .nav-list li {
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-list a {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            transition: color 0.3s ease;
+            display: block;
+        }
+
+        .nav-list a:hover,
+        .nav-list a.active {
+            color: var(--accent-gold);
+        }
+
+        .compliance-box {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            padding: 4rem;
+            margin-top: 5rem;
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .compliance-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 184, 149, 0.05), transparent 70%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 900px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .sticky-sidebar {
+                position: static;
+                margin-bottom: 2rem;
+                border-bottom: 1px solid var(--border-subtle);
+                padding-bottom: 2rem;
+            }
+
+            .nav-list {
+                border-left: none;
+                margin-left: 0;
+                padding-left: 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .nav-list li {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand"><span class="dot"></span> GÜLER & PARTNERS</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">The Firm</a></li>
+                <li><a href="partners.html">Target Markets</a></li>
+                <li><a href="risk.html" class="active">Risk</a></li>
+                <li><a href="industries.html">Verticals</a></li>
+            </ul>
+            <div class="nav-actions" style="display: flex; align-items: center;">
+                <!-- Language Switcher -->
+                <select id="lang-switcher" class="form-control" style="width: auto; padding: 0.5rem; margin-right: 1rem; display: inline-block; font-family: var(--font-mono); font-size: 0.8rem; background: rgba(0,0,0,0.5); border: 1px solid var(--border-subtle); color: var(--accent-gold); cursor: pointer; outline: none;">
+                    <option value="en">EN</option>
+                    <option value="ru">RU</option>
+                    <option value="es">ES</option>
+                    <option value="ur">UR</option>
+                    <option value="bn">BN</option>
+                </select>
+
+                <a href="contact.html" class="btn btn-primary btn-sm" id="nav-cta-desktop"
+                    style="display:none; padding: 0.75rem 1.5rem; font-size: 0.75rem;">Request Assessment</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-toggle">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-header content-relative">
+            <div class="grid-bg"></div>
+            <div class="header-glow"></div>
+            <div class="container fade-in-up">
+                <p class="mono" style="color: var(--accent-gold); margin-bottom: 1.5rem;">Underwriting</p>
+                <h1>Risk & Compliance.</h1>
+                <p style="font-size: 1.5rem; max-width: 800px; margin-top: 2rem; font-weight: 300; line-height: 1.4;">
+                    Defensible underwriting protocols and algorithmic fraud mitigation designed to preserve continuous
+                    acquiring relationships.
+                </p>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container flex-container content-grid fade-in-up">
+                <aside>
+                    <div class="sticky-sidebar">
+                        <h4
+                            style="margin-bottom: 2rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-gold); text-transform: uppercase;">
+                            Directives</h4>
+                        <ul class="nav-list">
+                            <li><a href="#underwriting" class="active">Underwriting Standards</a></li>
+                            <li><a href="#fraud">Fraud & BIN Analysis</a></li>
+                            <li><a href="#reserves">Reserve Management</a></li>
+                            <li><a href="#aml">AML Framework</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <div class="content-body" style="max-width: 800px;">
+                    <div id="underwriting" style="padding-top: 2rem; margin-bottom: 6rem;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Underwriting Standards</h2>
+                        <p style="font-size: 1.15rem;">Our commitment to banking partners requires rigorous pre-vetting
+                            of all merchant flow. We do not aggregate volume from unidentified sub-merchants or operate
+                            blind portfolios.</p>
+                        <p style="font-size: 1.15rem;">During the onboarding phase, our underwriting committee mandates
+                            comprehensive disclosure of Ultimate Beneficial Ownership (UBO), structural diagrams, and 6
+                            to 12 months of historical processing statements. New platforms lacking processing history
+                            are subject to strict probationary caps and active velocity monitoring until a defensible
+                            risk baseline is established.</p>
+                    </div>
+
+                    <div id="fraud" style="padding-top: 2rem; margin-bottom: 6rem;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Risk Scoring & 3D Secure Execution</h2>
+                        <p style="font-size: 1.15rem;">Our proprietary fraud scoring engines utilize real-time BIN
+                            analysis, device fingerprinting, and velocity checks to optimize authorization rates while
+                            mitigating chargeback exposure natively.</p>
+                        <p style="font-size: 1.15rem;">Transactions exceeding parameterized risk thresholds trigger
+                            dynamic 3D Secure step-ups. By executing friction selectively, we shift liability on
+                            high-risk payloads while minimizing checkout abandonment for known, low-risk cardholder
+                            profiles.</p>
+                    </div>
+
+                    <div id="reserves" style="padding-top: 2rem; margin-bottom: 6rem;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Chargeback Mitigation & Reserves</h2>
+                        <p style="font-size: 1.15rem;">In high-risk processing, chargebacks are inevitable; systemic MID
+                            termination is not. Güler & Partners utilizes proactive early-warning integrations (such as
+                            Ethoca and Verifi) to intercept disputed transactions before they manifest as network
+                            chargebacks, refunding the end-user automatically when pre-defined criteria are met.</p>
+                        <p style="font-size: 1.15rem;">Capital preservation is structured via dynamic Rolling Reserves.
+                            Holdback percentages are dynamically algorithmic—recalculated quarterly based on real-time
+                            chargeback ratios rather than static, punitive flat rates.</p>
+                    </div>
+
+                    <div id="aml" class="compliance-box glass-panel">
+                        <p class="mono"
+                            style="color: var(--accent-gold); margin-bottom: 1.5rem; letter-spacing: 0.15em;">Official
+                            Statement</p>
+                        <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">AML & Regulatory Framework</h3>
+                        <p style="margin-bottom: 0; font-size: 1.1rem; color: var(--text-primary); font-style: italic;">
+                            "Güler & Partners operates strictly within the anti-money laundering (AML) and
+                            counter-terrorist financing (CFT) frameworks established by our jurisdictional partners and
+                            acquiring networks. We do not provision infrastructure for restricted OFAC entities or
+                            unregulated operators in licensed jurisdictions. Our underwriting protocol mandates
+                            comprehensive disclosure of Ultimate Beneficial Ownership (UBO), historical processing
+                            statements, and continuous algorithmic monitoring of transaction origins to ensure absolute
+                            compliance without sacrificing throughput."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 1.5rem;"><span class="dot"></span>
+                        GÜLER & PARTNERS</a>
+                    <p style="max-width: 300px; color: var(--text-muted); font-size: 1rem;">Institutional risk
+                        mitigation and resilient acquiring architecture for global merchants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Operations</h4>
+                    <ul>
+                        <li><a href="partners.html">Target Markets</a></li>
+                        <li><a href="risk.html">Underwriting Standards</a></li>
+                        <li><a href="contact.html">Merchant Onboarding</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sectors</h4>
+                    <ul>
+                        <li><a href="industries.html">iGaming & Sportsbook</a></li>
+                        <li><a href="industries.html">Digital Assets</a></li>
+                        <li><a href="industries.html">High-Volume Retail</a></li>
+                        <li><a href="industries.html">Adult Entertainment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Corporate</h4>
+                    <ul>
+                        <li><a href="about.html">The Firm</a></li>
+                        <li><a href="mailto:compliance@gulerpartners.com">Compliance Office</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Güler & Partners. All rights reserved.</p>
+                <p class="mono" style="color: var(--accent-gold);">SECURE / COMPLIANT / REDUNDANT</p>
+            </div>
+        </div>
+    </footer>
+    <style>
+        @media (min-width: 1025px) {
+            #nav-cta-desktop {
+                display: inline-flex !important;
+            }
+        }
+    </style>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.content-body > div');
+            const navLinks = document.querySelectorAll('.nav-list a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 250) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="js/translations.js"></script>
+    <script src="js/lang.js"></script>
+</body>
+
+
+</html>

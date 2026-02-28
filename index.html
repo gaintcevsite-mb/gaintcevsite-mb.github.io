@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Güler & Partners | High-Risk Acquiring Infrastructure</title>
+    <meta name="description"
+        content="Güler & Partners engineers redundant payment routing, risk mitigation, and acquiring infrastructure for complex verticals.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Global Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="dot"></span> GÜLER & PARTNERS
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">The Firm</a></li>
+                <li><a href="partners.html">Target Markets</a></li>
+                <li><a href="risk.html">Risk</a></li>
+                <li><a href="industries.html">Verticals</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary btn-sm" id="nav-cta-desktop"
+                    style="display:none; padding: 0.75rem 1.5rem; font-size: 0.75rem;">Request Assessment</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-toggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Specific Hero Styles -->
+    <style>
+        .nav-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        @media (min-width: 1025px) {
+            #nav-cta-desktop {
+                display: inline-flex !important;
+            }
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: calc(var(--nav-height) + 2rem);
+            border-bottom: 1px solid var(--border-subtle);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-bg-accent {
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 184, 149, 0.08) 0%, transparent 60%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-subtitle {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 100px;
+            border: 1px solid rgba(212, 184, 149, 0.2);
+            background: rgba(212, 184, 149, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .hero-metrics {
+            display: flex;
+            gap: 4rem;
+            margin-top: 5rem;
+            flex-wrap: wrap;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .metric-value {
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            line-height: 1;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+        }
+
+        /* Grid Layouts - Premium */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 5rem;
+        }
+
+        .feature-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            padding: 3rem;
+            border-radius: var(--radius-md);
+            transition: transform 0.4s var(--ease-out), background 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            background: var(--bg-secondary);
+            border-color: rgba(212, 184, 149, 0.3);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-gold), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card .icon {
+            color: var(--accent-gold);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--accent-gold);
+        }
+
+        /* Premium Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        .flow-diagram::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-gold) 0%, transparent 100%);
+            z-index: 0;
+        }
+
+        .flow-step {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 3rem;
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-subtle);
+            padding: 2.5rem;
+            align-items: start;
+            border-radius: var(--radius-md);
+            position: relative;
+            z-index: 1;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .flow-step:hover {
+            border-color: var(--accent-gold);
+            transform: translateX(10px);
+        }
+
+        .flow-number {
+            font-family: var(--font-mono);
+            font-size: 3rem;
+            color: var(--accent-gold);
+            font-weight: 300;
+            line-height: 1;
+            background: var(--bg-primary);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid var(--border-subtle);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .founder-box {
+            text-align: center;
+        }
+
+        .founder-quote {
+            font-size: 1.75rem;
+            line-height: 1.4;
+            color: var(--text-primary);
+            font-weight: 300;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <main>
+        <!-- Premium Hero Section -->
+        <section class="section hero content-relative">
+            <div class="grid-bg"></div>
+            <div class="hero-bg-accent"></div>
+            <div class="container fade-in-up">
+                <div class="hero-content">
+                    <div class="hero-subtitle mono">
+                        <span class="dot"
+                            style="width: 6px; height: 6px; background: var(--accent-gold); border-radius: 50%; box-shadow: 0 0 10px var(--accent-gold);"></span>
+                        Institutional Acquiring
+                    </div>
+                    <h1>Resilient Acquiring Infrastructure <br /><span style="color: var(--text-secondary);">for Complex
+                            Verticals.</span></h1>
+
+                    <p
+                        style="font-size: 1.25rem; max-width: 600px; margin-top: 2rem; font-weight: 300; color: #9CA3AF;">
+                        Güler & Partners engineers redundant payment routing for industries where uptime is critical and
+                        risk is inherent. Absolute fund autonomy meets defensible underwriting.
+                    </p>
+                    <div style="margin-top: 3.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <a href="partners.html" class="btn btn-primary partner-cta">Become a Partner</a>
+                        <a href="partners.html" class="btn btn-secondary">Explore Partners</a>
+                    </div>
+                </div>
+
+                <!-- Upgraded Credibility Strip -->
+                <div class="hero-metrics content-relative fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="metric">
+                        <div class="metric-value">99.998<span style="color: var(--accent-gold);">%</span></div>
+                        <div class="metric-label">API Gateway Uptime</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">14<span style="color: var(--accent-gold);">+</span></div>
+                        <div class="metric-label">Acquiring Bank Nodes</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">1.4k<span style="color: var(--accent-gold);">+</span></div>
+                        <div class="metric-label">Active MIDs Managed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upgraded Core Competencies -->
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 600px;">
+                    <h2 class="fade-in-up">Systemic Reliability</h2>
+                    <p class="fade-in-up" style="font-size: 1.25rem;">We deploy banking strategies that assume node
+                        failure is inevitable, creating absolute redundancy at the perimeter.</p>
+                </div>
+
+                <div class="features-grid fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="feature-card">
+                        <div class="icon">01_ROUTING</div>
+                        <h3>Intelligent Cascading</h3>
+                        <p>Our proprietary routing logic utilizes real-time BIN mapping and historical success rates to
+                            push authorization payloads to the optimal acquiring node instantly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">02_RISK</div>
+                        <h3>Frictionless Compliance</h3>
+                        <p>We deploy dynamic 3D Secure step-ups and velocity checks based on active risk profiles,
+                            intercepting high-probability chargebacks without inflating abandonment.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">03_BANKING</div>
+                        <h3>Uncompromised Banking</h3>
+                        <p>Our global redundancy spans multi-jurisdictional acquiring partners, ensuring that regional
+                            policy shifts never halt your operational revenue flow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Payment Flow Architecture -->
+        <section class="section"
+            style="background-color: var(--bg-tertiary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+            <div class="container">
+                <div style="max-width: 800px;">
+                    <div class="mono" style="color: var(--accent-gold); margin-bottom: 1.5rem;">Architecture</div>
+                    <h2 class="fade-in-up">Optimized Transaction Lifecycle</h2>
+                    <p class="fade-in-up" style="font-size: 1.25rem;">A structural overview of our authorization logic
+                        and post-transaction settlement mechanics, designed for scale and defense.</p>
+                </div>
+
+                <div class="flow-diagram">
+                    <div class="flow-step fade-in-up">
+                        <div class="flow-number">01</div>
+                        <div class="flow-content">
+                            <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">Origin & Payload Encryption</h4>
+                            <p>Secure tokenization of cardholder data at the perimeter; automated velocity and
+                                historical fraud checks cross-referenced in real-time against negative databases.</p>
+                        </div>
+                    </div>
+                    <div class="flow-step fade-in-up" style="transition-delay: 0.1s;">
+                        <div class="flow-number">02</div>
+                        <div class="flow-content">
+                            <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">Dynamic Routing & BIN Optimization</h4>
+                            <p>Based on the BIN geography, historical success rates, and active MCC constraints, the
+                                transaction is actively routed to the optimal acquiring node within our redundant
+                                network.</p>
+                        </div>
+                    </div>
+                    <div class="flow-step fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="flow-number">03</div>
+                        <div class="flow-content">
+                            <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">Authorization & Cascading Failover</h4>
+                            <p>If a primary acquiring bank declines the authorization due to internal risk models or
+                                downtime, the sequence instantly cascades to pre-mapped secondary MIDs.</p>
+                        </div>
+                    </div>
+                    <div class="flow-step fade-in-up" style="transition-delay: 0.3s;">
+                        <div class="flow-number">04</div>
+                        <div class="flow-content">
+                            <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">Settlement & Reconciliation</h4>
+                            <p>Cleared funds are batched and routed according to client-specific settlement schedules,
+                                seamlessly accounting for agreed-upon rolling reserves.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upgraded Founder Message -->
+        <section class="section" style="padding: 12rem 0;">
+            <div class="container fade-in-up">
+                <div class="founder-box glass-panel">
+                    <p class="mono" style="color: var(--accent-gold); margin-bottom: 2.5rem; letter-spacing: 0.2em;">A
+                        Note on Stability</p>
+                    <p class="founder-quote">
+                        "In an industry defined by volatility, stability is the only metric of consequence. We do not
+                        obscure the realities of high-risk processing. Instead, we act as a firewall between your
+                        operational revenue and systemic industry risks."
+                    </p>
+                    <div
+                        style="margin-top: 3.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: inline-block;">
+                        <h4 style="margin: 0; font-size: 1.25rem;">Managing Partner</h4>
+                        <p class="mono" style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.8rem;">
+                            GÜLER & PARTNERS LTD.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 1.5rem;">
+                        <span class="dot"></span> GÜLER & PARTNERS
+                    </a>
+                    <p style="max-width: 300px; color: var(--text-muted); font-size: 1rem;">Institutional risk
+                        mitigation and resilient acquiring architecture for global merchants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Operations</h4>
+                    <ul>
+                        <li><a href="partners.html">Target Markets</a></li>
+                        <li><a href="risk.html">Underwriting Standards</a></li>
+                        <li><a href="contact.html">Merchant Onboarding</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sectors</h4>
+                    <ul>
+                        <li><a href="industries.html">iGaming & Sportsbook</a></li>
+                        <li><a href="industries.html">Digital Assets</a></li>
+                        <li><a href="industries.html">High-Volume Retail</a></li>
+                        <li><a href="industries.html">Adult Entertainment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Corporate</h4>
+                    <ul>
+                        <li><a href="about.html">The Firm</a></li>
+                        <li><a href="mailto:compliance@gulerpartners.com">Compliance Office</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Güler & Partners. All rights reserved.</p>
+                <p class="mono" style="color: var(--accent-gold);">SECURE / COMPLIANT / REDUNDANT</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script src="js/translations.js"></script>
+    <script src="js/lang.js"></script>
+</body>
+
+
+</html>
