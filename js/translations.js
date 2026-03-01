@@ -92,7 +92,7 @@ const translations = {
     "03_Failover": "03_Аварийное переключение",
     "\"EUR\"": "\"ЕВРО\"",
     "A structural overview of our authorization logic and post-transaction settlement mechanics, designed for scale and defense.": "Структурный обзор нашей логики авторизации и механики расчетов после транзакций, предназначенный для масштабирования и защиты.",
-    "SECURE / COMPLIANT / REDUNDANT": "БЕЗОПАСНЫЙ / СООТВЕТСТВУЮЩИЙ / ИЗБЫТОЧНЫЙ",
+    "SECURE / COMPLIANT / REDUNDANT": "БЕЗОПАСНО / ЛЕГАЛЬНО / ОТКАЗОУСТОЙЧИВО",
     "A vertical defined by rapid card brand policy shifts and reputational risk. We maintain direct relationships with acquiring banks operating specifically outside of North American jurisdiction to guarantee uninterrupted recurring billing loops for content platforms.": "Вертикаль, определяемая быстрыми изменениями в политике кредитных карт и репутационным риском. Мы поддерживаем прямые отношения с банками-эквайерами, работающими за пределами юрисдикции Северной Америки, чтобы гарантировать бесперебойные повторяющиеся циклы выставления счетов для контент-платформ.",
     "Corporate History & Collective Experience": "Корпоративная история и коллективный опыт",
     "Dynamic Routing & BIN Optimization": "Динамическая маршрутизация и оптимизация BIN",
