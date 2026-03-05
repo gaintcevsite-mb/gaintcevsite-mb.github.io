@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Init: check saved language
-    const saved = localStorage.getItem('guler_lang') || 'en';
+    const saved = localStorage.getItem('crypex_lang') || 'en';
     if (saved !== 'en') {
         switcher.value = saved;
         // Wait a tick for DOM to settle, then translate
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // On change
     switcher.addEventListener('change', (e) => {
         const lang = e.target.value;
-        localStorage.setItem('guler_lang', lang);
+        localStorage.setItem('crypex_lang', lang);
         applyTranslation(lang);
     });
 });

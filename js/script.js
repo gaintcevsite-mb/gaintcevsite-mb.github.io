@@ -1,5 +1,5 @@
 /**
- * Guler Partners - Global JavaScript
+ * CRYPEX - Global JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -96,7 +96,7 @@ if (partnerCtas.length > 0) {
                     </div>
                 </div>
                 
-                <a href="https://t.me/GulerPartners_bot" target="_blank" class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1rem;" id="globalModalBtn">Apply via Telegram</a>
+                <a href="https://t.me/crypex_bot" target="_blank" class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1rem;" id="globalModalBtn">Apply via Telegram</a>
             </div>
         </div>
     `;
@@ -129,7 +129,7 @@ if (partnerCtas.length > 0) {
             // Generate a targeted message string to the bot
             const val = this.getAttribute('data-value');
             const encodedStartParam = encodeURIComponent('join_' + val.replace(/[^A-Za-z0-9]/g, ''));
-            telegramBtn.href = `https://t.me/GulerPartners_bot?start=${encodedStartParam}`;
+            telegramBtn.href = `https://t.me/crypex_bot?start=${encodedStartParam}`;
         });
     });
 
@@ -178,7 +178,7 @@ if (contactCtas.length > 0) {
                 </p>
                 
                 <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <a href="https://t.me/adam_guler" target="_blank" class="btn btn-secondary" style="width: 100%; justify-content: center; gap: 0.75rem; padding: 1.1rem 2rem;">
+                    <a href="https://t.me/crypex_admin" target="_blank" class="btn btn-secondary" style="width: 100%; justify-content: center; gap: 0.75rem; padding: 1.1rem 2rem;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.178c.1 0 .321.039.465.178a.636.636 0 0 1 .2.436c.011.108.026.313.015.497-.138 1.846-.735 6.322-1.039 8.389-.128.874-.381 1.167-.625 1.196-.533.062-1.012-.342-1.47-.711-1.105-.675-1.728-1.096-2.801-1.754-.627-.438-.375-.683.262-1.075.18-.165 3.302-3.027 3.362-3.286.008-.032.014-.152-.057-.216s-.174-.042-.249-.025c-.106.024-1.793 1.14-5.061 3.345-.479.329-.913.489-1.302.481-.429-.009-1.253-.242-1.865-.442-.751-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.627 4.477-1.635z"/></svg>
                         Telegram
                     </a>

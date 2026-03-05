@@ -4,8 +4,8 @@ import json
 import os
 import re
 
-TOKEN = '8617195820:AAHIqbHhfQpstsswgfrfK_lJTNCAt2F5C1g'
-ADMIN_ID = 8253241623
+TOKEN = '8755781769:AAFcrjRrJy7DC5P9B_RBMbvIp41obawiFxU'
+ADMIN_IDS = [8253241623, 7825089214]
 CONFIG_FILE = 'bot_config.json'
 
 bot = telebot.TeleBot(TOKEN)
@@ -46,7 +46,7 @@ def global_text_router(message):
     text = message.text
     
     # 1. Admin Reply Intercept
-    if chat_id == ADMIN_ID and message.reply_to_message is not None:
+    if chat_id in ADMIN_IDS and message.reply_to_message is not None:
         return admin_reply_handler(message)
         
     # 2. Start Command Intercept (Resets everything)
@@ -79,7 +79,7 @@ def global_text_router(message):
         matched_country = None
         if deep_link_country:
             available_countries = list(bot_config.get('countries', {}).keys())
-            search_str = deep_link_country.lower()
+            search_str = deep_link_country.replace('_', ' ').lower()
             for conf_c in available_countries:
                 if search_str in conf_c.lower():
                     matched_country = conf_c
@@ -91,20 +91,20 @@ def global_text_router(message):
         else:
             available_countries = list(bot_config.get('countries', {}).keys())
             if not available_countries:
-                bot.send_message(chat_id, "Welcome to Güler & Partners! Applications are currently closed.")
+                bot.send_message(chat_id, "Welcome to CRYPEX! Applications are currently closed.")
                 return
             
             user_data[chat_id]['state'] = 'awaiting_country'
             bot.send_message(
                 chat_id,
-                "Welcome to Güler & Partners!\n\nPlease select your country to apply:",
+                "Welcome to CRYPEX!\n\nPlease select your country to apply:",
                 reply_markup=create_reply_keyboard(available_countries)
             )
         return
 
     # 3. Admin Command Intercept
     if text == '/admin':
-        if chat_id == ADMIN_ID:
+        if chat_id in ADMIN_IDS:
             # Clear admin text state just in case
             if chat_id in admin_state:
                 del admin_state[chat_id]
@@ -255,7 +255,7 @@ def finish_application(chat_id):
             answers_text += f"🔹 <b>{q['text']}</b>\n{ans}\n\n"
             
     admin_text = (
-        f"🚨 <b>Новый Лид: {country}</b> 🚨\n"
+        f"🚨 <b>Новая заявка CRYPEX: {country}</b> 🚨\n"
         f"<i>(ID: {chat_id})</i>\n\n"
         f"👤 <b>Имя:</b> {name}\n"
         f"📱 <b>Telegram:</b> {username}\n\n"
@@ -265,7 +265,8 @@ def finish_application(chat_id):
     )
     
     try:
-        bot.send_message(ADMIN_ID, admin_text, parse_mode='HTML')
+        for admin_id in ADMIN_IDS:
+            bot.send_message(admin_id, admin_text, parse_mode='HTML')
     except Exception as e:
         print(f"Failed to send admin message: {e}")
 
@@ -280,9 +281,9 @@ def admin_reply_handler(message):
         reply_text = f"✉️ <b>Сообщение от Администратора:</b>\n\n{message.text}"
         try:
             bot.send_message(user_chat_id, reply_text, parse_mode='HTML')
-            bot.send_message(ADMIN_ID, "✅ Ответ отправлен.")
+            bot.send_message(message.chat.id, "✅ Ответ отправлен.")
         except Exception:
-            bot.send_message(ADMIN_ID, "❌ Ошибка при отправке ответа.")
+            bot.send_message(message.chat.id, "❌ Ошибка при отправке ответа.")
 
 # --- Admin Panel (Dynamic Constructor) ---
 
@@ -297,7 +298,7 @@ def show_admin_menu(chat_id):
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('admin_'))
 def handle_admin_callbacks(call):
-    if call.message.chat.id != ADMIN_ID: return
+    if call.message.chat.id not in ADMIN_IDS: return
     
     action = call.data
     
@@ -592,5 +593,5 @@ def process_broadcast_msg(message):
     show_admin_menu(chat_id)
 
 if __name__ == '__main__':
-    print("Bot is running with Advanced Constructor...")
+    print("CRYPEX Bot is running...")
     bot.infinity_polling(skip_pending=True)

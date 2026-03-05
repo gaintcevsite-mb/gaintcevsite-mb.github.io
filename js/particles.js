@@ -1,5 +1,5 @@
 /**
- * Güler & Partners — Custom iGaming Icon Decor
+ * CRYPEX — Custom iGaming Icon Decor
  * Places hand-designed icon PNGs as fixed background elements with CSS glow
  */
 (function () {
